@@ -17,7 +17,7 @@ RUN useradd mockbuilder && \
 ONBUILD COPY mock /etc/mock
 
 COPY ./build-rpm.sh /build-rpm.sh
-COPY srpm/icinga2-2.13.5-1.fc36.icinga.src.rpm /icinga2-2.13.5-1.fc36.icinga.src.rpm
+COPY srpm/ /srpm
 RUN chmod +x /build-rpm.sh
 COPY ./rpm-sign.exp /rpm-sign.exp
 RUN chmod +x /rpm-sign.exp
