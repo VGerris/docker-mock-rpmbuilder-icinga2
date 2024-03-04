@@ -1,5 +1,5 @@
 FROM fedora:latest
-LABEL "maintainer"="Marco Mornati <marco@mornati.net>"
+LABEL "maintainer"="Vincent Gerris <vgerris@gmail.com>"
 LABEL "com.github.actions.name"="RPM Builder"
 LABEL "com.github.actions.description"="Build RPM using RedHat Mock"
 LABEL "com.github.actions.icon"="pocket"
@@ -17,6 +17,7 @@ RUN useradd mockbuilder && \
 ONBUILD COPY mock /etc/mock
 
 COPY ./build-rpm.sh /build-rpm.sh
+COPY srpm/icinga2-2.13.5-1.fc36.icinga.src.rpm /icinga2-2.13.5-1.fc36.icinga.src.rpm
 RUN chmod +x /build-rpm.sh
 COPY ./rpm-sign.exp /rpm-sign.exp
 RUN chmod +x /rpm-sign.exp
