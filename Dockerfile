@@ -4,7 +4,6 @@ LABEL "com.github.actions.name"="RPM Builder"
 LABEL "com.github.actions.description"="Build RPM using RedHat Mock"
 LABEL "com.github.actions.icon"="pocket"
 LABEL "com.github.actions.color"="green"
-RUN --security=insecure
 
 RUN dnf -y --setopt="tsflags=nodocs" update && \
 	dnf -y --setopt="tsflags=nodocs" install rpmdevtools mock \
