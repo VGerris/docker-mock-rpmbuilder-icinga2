@@ -4,12 +4,14 @@ description: 'Greet someone and record the time'
 inputs:
   srpm-to-build:  # id of input
     description: 'the SRPM file to use for building RPMS'
-    required: true
+    required: false
     default: 'icinga2-2.13.5-1.fc36.icinga.src.rpm'
-  SOURCE_RPM: 
+  source_rpm: 
     default: 'icinga2-2.13.5-1.fc36.icinga.src.rpm'
-  MOCK_CONFIG: 
+    required: false
+  mock_config: 
     default: 'rocky+epel-9-x86_64'
+    required: false
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -18,5 +20,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.srpm-to-build }}
-    - ${{ inputs.SOURCE_RPM }}
-    - ${{ inputs.MOCK_CONFIG }}
+    - ${{ inputs.source_rpm }}
+    - ${{ inputs.mock_config }}
