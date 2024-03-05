@@ -19,6 +19,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.srpm-to-build }}
-    - ${{ inputs.source_rpm }}
-    - ${{ inputs.mock_config }}
+    - SOURCE_RPM=${{ inputs.srpm-to-build }}
+    - MOCK_CONFIG=${{ inputs.mock_config }}
