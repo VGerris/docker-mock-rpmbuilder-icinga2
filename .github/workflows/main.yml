@@ -8,7 +8,7 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: vgerris/docker-mock-rpmbuilder-icinga2@master
-        with:
+      - with:
           options: --privileged
         #with:
         #  entryPoint: '/build-rpm.sh'
