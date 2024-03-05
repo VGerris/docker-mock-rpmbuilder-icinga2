@@ -9,7 +9,9 @@ jobs:
         id: hello
         uses: vgerris/docker-mock-rpmbuilder-icinga2@master
         with:
-          options: --privileged
+          entrypoint: /build-rpm.sh
+          args: --privileged
+          #options: --privileged
         #with:
         #  entryPoint: '/build-rpm.sh'
       # Use the output from the `hello` step
