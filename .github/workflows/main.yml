@@ -3,6 +3,11 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    container:
+      image: docker.io/vgerris/mock-rpmbuilder
+      env:
+        ASAN_OPTIONS: detect_leaks=0
+      options: --sysctl net.ipv6.conf.all.disable_ipv6=0 --privileged
     name: A job to say hello
     steps:
       - name: Hello world action step
