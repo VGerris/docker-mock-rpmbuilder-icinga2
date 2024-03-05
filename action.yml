@@ -18,6 +18,6 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - SOURCE_RPM=${{ inputs.srpm-to-build }}
-    - MOCK_CONFIG=${{ inputs.mock_config }}
+  #args:
+  #  - SOURCE_RPM=${{ inputs.srpm-to-build }}
+  #  - MOCK_CONFIG=${{ inputs.mock_config }}
