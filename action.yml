@@ -5,7 +5,7 @@ inputs:
   srpm-to-build:  # id of input
     description: 'the SRPM file to use for building RPMS'
     required: false
-    default: 'icinga2-2.13.5-1.fc36.icinga.src.rpm'
+    default: '/srpm/icinga2-2.13.5-1.fc36.icinga.src.rpm'
   source_rpm: 
     default: 'icinga2-2.13.5-1.fc36.icinga.src.rpm'
     required: false
