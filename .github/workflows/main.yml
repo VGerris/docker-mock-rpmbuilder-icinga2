@@ -8,7 +8,7 @@ jobs:
       env:
         ASAN_OPTIONS: detect_leaks=0
       options: --sysctl net.ipv6.conf.all.disable_ipv6=0 --privileged
-    name: A job to say hello
+    name: A job to build RPM files
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
