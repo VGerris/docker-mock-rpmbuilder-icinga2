@@ -21,9 +21,10 @@ runs:
   env: 
     SOURCE_RPM: ${{ inputs.srpm-to-build }}
     MOCK_CONFIG: ${{ inputs.mock_config }}
-  with:
-    options: --privileged
+  #with:
+  #  options: --privileged
 
-  #args:
+  args:
+    - --privileged
   #  - SOURCE_RPM=${{ inputs.srpm-to-build }}
   #  - MOCK_CONFIG=${{ inputs.mock_config }}
