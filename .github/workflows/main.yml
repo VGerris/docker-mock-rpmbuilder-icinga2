@@ -10,7 +10,7 @@ jobs:
         uses: vgerris/docker-mock-rpmbuilder-icinga2@master
         with:
           entrypoint: /build-rpm.sh
-          args: --privileged
+          args: --privileged --security-opt seccomp=unconfined
           #options: --privileged
         #with:
         #  entryPoint: '/build-rpm.sh'
