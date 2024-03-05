@@ -16,6 +16,9 @@ jobs:
         id: hello
         run: |
           pwd && ls -lrta
+          echo $SOURCE_RPM
+          export SOURCE_RPM="icinga2-2.13.5-1.fc36.icinga.src.rpm"
+          export MOCK_CONFIG="rocky+epel-9-x86_64"
           /build-rpm.sh 
         # with:
           #entrypoint: /build-rpm.sh
@@ -24,8 +27,8 @@ jobs:
         #with:
         #  entryPoint: '/build-rpm.sh'
         env: 
-          SOURCE_RPM: ${{ inputs.srpm-to-build }}
-          MOCK_CONFIG: ${{ inputs.mock_config }}
+          SOURCE_RPM: /srpm/icinga2-2.13.5-1.fc36.icinga.src.rpm
+          MOCK_CONFIG: rocky+epel-9-x86_64
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
