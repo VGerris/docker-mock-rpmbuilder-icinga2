@@ -24,7 +24,6 @@ runs:
   #with:
   #  options: --privileged
 
-  args:
-    - --privileged
+  #args:
   #  - SOURCE_RPM=${{ inputs.srpm-to-build }}
   #  - MOCK_CONFIG=${{ inputs.mock_config }}
