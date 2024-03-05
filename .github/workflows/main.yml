@@ -10,12 +10,14 @@ jobs:
       options: --sysctl net.ipv6.conf.all.disable_ipv6=0 --privileged
     name: A job to say hello
     steps:
-      - name: Hello world action step
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Run rpm build command
         id: hello
-        uses: vgerris/docker-mock-rpmbuilder-icinga2@master
-        with:
-          entrypoint: /build-rpm.sh
-          args: --privileged --security-opt seccomp=unconfined
+        run: /build-rpm.sh 
+        # with:
+          #entrypoint: /build-rpm.sh
+          #args: --privileged --security-opt seccomp=unconfined
           #options: --privileged
         #with:
         #  entryPoint: '/build-rpm.sh'
